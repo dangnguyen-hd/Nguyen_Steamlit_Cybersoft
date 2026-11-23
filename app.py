@@ -1,11 +1,15 @@
 import streamlit as st
 import pandas as pd
+import openai
 
 st.set_page_config(
     page_title="Ask your CSV",
     page_icon="📊",
     layout="wide"
 )
+
+# Initialize OpenAI Client
+client = openai.OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 
 # Session state initialization:
 if 'massage' not in st.session_state:
